@@ -5,7 +5,6 @@
 }
 
 html {
-    font-size: 62.5%;
     font-family: sans-serif;
     text-align: center;
 }
@@ -18,14 +17,70 @@ div {
     border: 1px black solid;
 }
 
-#container, section > div {
+section {
+    padding: 2rem;
+}
+
+#container, #display, section div, #game {
     display: flex;
 }
 
-section > div {
+#display {
     flex-direction: column;
+    flex-basis: 40%;
+    justify-content: space-around;
 }
 
-section {
+#display > div {
+    flex-direction: row;
+}
+
+.player {
     flex-basis: 50%;
+    height: 25vh;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#game {
+    flex-basis: 60%;
+    flex-wrap: wrap;
+}
+
+#game div {
+    flex-basis: 30%;
+    height: 30vh;
+}
+
+#start {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    align-self: center;
+    border-radius: 25%;
+}
+
+@media screen and (max-width: 600px) {
+
+    #container {
+        flex-direction: column;
+    }
+
+    .player {
+        height: 13vh;
+    }
+
+    section {
+        padding: 0;
+    }
+
+    #game {
+        justify-content: center;
+    }
+
+    #start {
+        margin: 1rem;
+    }
+
 }
