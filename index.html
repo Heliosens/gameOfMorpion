@@ -4,32 +4,40 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
-        <div class="red"></div>
-        <div>
-            <span>joueur X</span>
-            <span>click gauche</span>
-        </div>
-        <div>
-            <span>joueur O</span>
-            <span>click droit</span>
-        </div>
-        <div id="pointX">0</div>
-        <div id="pointO">0</div>
-        <span>Start</span>
-    </section>
-    <main>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </main>
+    <div id="container">
+        <section>
+            <div id="red"></div>
+            <div>
+                <div>
+                    <p>joueur X</p>
+                    <p>click gauche</p>
+                    <span id="pointX">0</span>
+                </div>
+                <div>
+                    <p>joueur O</p>
+                    <p>click droit</p>
+                    <span id="pointO">0</span>
+                </div>
+            </div>
+
+            <span>Start</span>
+        </section>
+        <main>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </main>
+    </div>
+
+    <script src="appGame.js"></script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+body {
+    width: 100%;
+}
+
+#container, section, main {
+    display: flex;
+}
+
+section {
+    width: 30%;
+    font-size: 2rem;
+    flex-direction: column;
+}
+
+section div, main div {
+    border: 1px black solid;
+}
+
+section div {
+    flex-basis: 50%;
+}
+
+#red {
+    position: absolute;
+    display: none;
+    border: 3px solid red;
+    border-radius: 2rem;
+}
+
+main {
+    width: 50%;
+    height: 80vh;
+    flex-wrap: wrap;
+    justify-content: stretch;
+}
+
+main div {
+    flex-basis: 33%;
+
+}
