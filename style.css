@@ -14,39 +14,18 @@ body {
     width: 100%;
 }
 
-#container, section, main {
-    display: flex;
-}
-
-section {
-    width: 30%;
-    font-size: 2rem;
-    flex-direction: column;
-}
-
-section div, main div {
+div {
     border: 1px black solid;
 }
 
-section div {
+#container, section > div {
+    display: flex;
+}
+
+section > div {
+    flex-direction: column;
+}
+
+section {
     flex-basis: 50%;
-}
-
-#red {
-    position: absolute;
-    display: none;
-    border: 3px solid red;
-    border-radius: 2rem;
-}
-
-main {
-    width: 50%;
-    height: 80vh;
-    flex-wrap: wrap;
-    justify-content: stretch;
-}
-
-main div {
-    flex-basis: 33%;
-
 }
