@@ -7,13 +7,14 @@
 html {
     font-family: sans-serif;
     text-align: center;
+    font-size: 1.5rem;
 }
 
 body {
     width: 100%;
 }
 
-.player, #start, #game div {
+.player, #restart, #cases div {
     border: 1px black solid;
 }
 
@@ -21,51 +22,94 @@ section {
     padding: 2rem;
 }
 
-#container, #display, section div, #game {
+main, #display, section div, #cases div {
     display: flex;
 }
 
 #display {
     flex-direction: column;
     flex-basis: 40%;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
-#display > div {
+#info {
     flex-direction: row;
+    color: white;
 }
 
-.player {
-    flex-basis: 50%;
-    height: 25vh;
-    flex-direction: column;
-    justify-content: space-around;
+#info div:first-child {
+    background-color: red;
+}
+
+#info div:last-child {
+    background-color: dodgerblue;
 }
 
 #game {
     flex-basis: 60%;
-    flex-wrap: wrap;
+    position: relative;
+    border: 1px orangered dashed;
 }
 
-#game div {
+.player {
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player span {
+    padding: .5rem;
+}
+
+.point {
+    font-size: 2rem;
+}
+
+#cases {
+    flex-wrap: wrap;
+    border: 1px black dashed;
+    cursor: url("playerX.png"), auto;
+}
+
+#cases div {
     flex-basis: 30%;
-    height: 30vh;
-    font-size: 10vh;
+    height: 28vh;
+    font-size: 17vh;
+    justify-content: center;
+    align-items: center;
 }
 
 #result {
     position: absolute;
     top : 0;
-    right: 5%;
-    width: 55%;
-    height: 100vh;
+    left: 0;
+    width: 90%;
+    height: 100%;
     border: 1px red solid;
     display: none;
     justify-content: center;
     align-items: center;
 }
 
-#start {
+#result div {
+    background-color: #ffffff80;
+    padding: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+#result p {
+    padding: 0 1rem;
+    font-size: 2rem;
+    color: white;
+}
+
+#XoO {
+    font-size: 4rem;
+}
+
+#restart {
     width: 50%;
     justify-content: center;
     align-items: center;
@@ -74,26 +118,42 @@ section {
     border-radius: 25%;
 }
 
-@media screen and (max-width: 600px) {
-
-    #container {
+@media screen and (max-width: 850px){
+    main {
         flex-direction: column;
+    }
+
+    section {
+        padding: .5rem;
+    }
+
+
+    #display {
+        flex-direction: row;
     }
 
     .player {
         height: 13vh;
+        flex-direction: row;
     }
 
-    section {
-        padding: 0;
+    #info {
+        flex-direction: column;
     }
 
-    #game {
-        justify-content: center;
+    #restart {
+        width: 30%;
     }
 
-    #start {
-        margin: 1rem;
+}
+
+@media screen and (max-width: 450px) {
+
+    html {
+        font-size: 1rem;
     }
 
+    #cases div {
+        height: 20vh;
+    }
 }

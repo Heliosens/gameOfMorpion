@@ -3,36 +3,66 @@ document.addEventListener('contextmenu', function (event){
 });
 
 // get elements
-let game = document.getElementById('game').getElementsByTagName('div');
-let start = document.getElementById('start');
+let gameBoard = document.getElementById('cases');
+let cases = gameBoard.getElementsByTagName('div');
+let restart = document.getElementById('restart');
 let result = document.getElementById('result');
+let XoO = document.getElementById('XoO');
+let point = document.getElementsByClassName('point');
 
 
-start.addEventListener('click', function (){
-    for(let i = 0 ; i < game.length ; i++){
-        game[i].addEventListener('mouseup', function (event){
-            console.log(event.button);
+let turn = 0;   // player 1 : X
+
+for(let i = 0 ; i < cases.length ; i++){                 // for each cases
+    cases[i].addEventListener('mouseup', function (event){   // on click
+        if(cases[i].innerHTML.length === 0){         // if case is empty
             switch (event.button){
                 case 0 :
-                    game[i].innerHTML = "X";
-                    console.log(i);
-                    checkGame("X");
+                    if(turn === 0){
+                        cases[i].innerHTML = "X";        // write player mark
+                        cases[i].style.color = "red";
+                        checkGame("X", "red");             // verify if player win
+                        gameBoard.style.cursor = 'url("playerO.png"), auto'
+                        turn++;                         // next player
+                    }
                     break;
                 case 2 :
-                    game[i].innerHTML = "O"
+                    if(turn === 1){
+                        cases[i].innerHTML = "O";
+                        cases[i].style.color = "dodgerblue";
+                        checkGame("O", "dodgerblue");
+                        gameBoard.style.cursor = 'url("playerX.png"), auto'
+                        turn--;
+                    }
                     break;
             }
-        })
+        }
+    })
+}
 
-    }
-})
 
-function checkGame (player) {
-    if((game[0].innerHTML === game[1].innerHTML && game[0].innerHTML === game[2].innerHTML ||
-        game[3].innerHTML === game[4].innerHTML && game[3].innerHTML === game[5].innerHTML ||
-        game[6].innerHTML === game[7].innerHTML && game[6].innerHTML === game[8].innerHTML) &&
-        (game[0].innerHTML === player || game[3].innerHTML === player || game[6].innerHTML === player)){
-        result.style.display = "flex";
+function checkGame (player, color) {
+    for (let i = 0 ; i < 9 ; i+=3){
+        if(cases[i].innerHTML === cases[1+i].innerHTML && cases[i].innerHTML === cases[2+i].innerHTML && cases[i].innerHTML === player){
+            XoO.innerHTML = player;
+            XoO.parentElement.style.backgroundColor = color;
+            result.style.display = "flex";
+            point[turn].innerHTML = (parseInt(point[turn].innerHTML) + 1).toString();
+        }
     }
 }
+
+function resetGame () {
+    gameBoard.style.cursor = 'url("playerX.png"), auto'
+    for (let i = 0 ; i < cases.length ; i++){
+        cases[i].innerHTML = "";
+    }
+    point[0].innerHTML = point[1].innerHTML = "0";
+    turn = 0;
+}
+
+restart.addEventListener('click', function (){  // click start
+    restart.style.backgroundColor = "green";
+    resetGame();
+})
 

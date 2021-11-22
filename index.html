@@ -7,41 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
+    <main>
         <section id="display">
-            <div>
+            <div id="info">
         <!--    <div id="red"></div>    -->
                 <div class="player">
                     <span>Joueur X</span>
                     <span>click gauche</span>
-                    <span id="pointX">0</span>
+                    <span class="point">0</span>
                 </div>
                 <div class="player">
                     <span>Joueur O</span>
                     <span>click droit</span>
-                    <span id="pointO">0</span>
+                    <span class="point">0</span>
                 </div>
             </div>
-            <div id="start">Start</div>
-        </section>
-
-        <section id="result">
-            <span>JOUEUR ? GAGNE</span>
-
+            <div id="restart">Restart</div>
         </section>
 
         <section id="game">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div id="result">
+                <div>
+                    <p>JOUEUR <span id="XoO"></span> GAGNE</p>
+                    <p id="next">partie suivante</p>
+                </div>
+            </div>
+
+            <div id="cases">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </section>
-    </div>
+
+    </main>
 
     <script src="appGame.js"></script>
 </body>
