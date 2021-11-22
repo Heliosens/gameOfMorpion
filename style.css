@@ -152,7 +152,6 @@ main, #display, section div, #cases div {
     #restart {
         width: 30%;
     }
-
 }
 
 @media screen and (max-width: 450px) {
