@@ -12,6 +12,7 @@ html {
 
 body {
     width: 100%;
+    background-color: black;
 }
 
 .player, #restart, #cases div {
@@ -38,7 +39,7 @@ main, #display, section div, #cases div {
 }
 
 #info div:first-child {
-    background-color: red;
+    background-color: crimson;
 }
 
 #info div:last-child {
@@ -48,7 +49,6 @@ main, #display, section div, #cases div {
 #game {
     flex-basis: 60%;
     position: relative;
-    border: 1px orangered dashed;
 }
 
 .player {
@@ -68,54 +68,63 @@ main, #display, section div, #cases div {
 
 #cases {
     flex-wrap: wrap;
-    border: 1px black dashed;
     cursor: url("playerX.png"), auto;
 }
 
 #cases div {
-    flex-basis: 30%;
+    flex-basis: 33%;
     height: 28vh;
     font-size: 17vh;
+    text-shadow: black 3px 3px;
     justify-content: center;
     align-items: center;
+    border: 4px solid white;
 }
 
 #result {
     position: absolute;
     top : 0;
     left: 0;
-    width: 90%;
+    width: 100%;
     height: 100%;
-    border: 1px red solid;
     display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
 
-#result div {
-    background-color: #ffffff80;
-    padding: 1rem;
-    width: 100%;
-    justify-content: center;
 }
 
 #result p {
+    width: 100%;
+    margin: 1rem;
     padding: 0 1rem;
     font-size: 2rem;
     color: white;
 }
 
-#XoO {
+#result span {
     font-size: 4rem;
 }
 
-#restart {
+#XoO {
+    font-size: 4rem;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#restart, #next {
     width: 50%;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+}
+
+#restart {
+    height: 2rem;
     justify-content: center;
     align-items: center;
-    height: 25vh;
     align-self: center;
-    border-radius: 25%;
 }
 
 @media screen and (max-width: 850px){
@@ -126,7 +135,6 @@ main, #display, section div, #cases div {
     section {
         padding: .5rem;
     }
-
 
     #display {
         flex-direction: row;
